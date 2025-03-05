@@ -1,0 +1,15 @@
+
+GET localhost:7000/api/poem
+
+###
+
+POST localhost:7000/api/poem
+Content-Type: "application/json"
+
+{
+    "title": "Silver poem",
+    "author": "ChatGPT",
+    "content": "Som månen kaster sit lys over haven, finder mit hjerte et skjult spor i mørket."
+}
+
+###
