@@ -4,26 +4,50 @@ package app.controllers;
 import app.daos.GenericDAO;
 import app.dtos.PoemDTO;
 import app.entities.Poem;
+import app.rest.Routes;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.javalin.http.Context;
 import jakarta.persistence.EntityManagerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class PoemController
 {
 
     private GenericDAO genericDAO;
+    private Logger logger = LoggerFactory.getLogger(PoemController.class);
+    private ObjectMapper objectMapper = new ObjectMapper();
+
+
+    private static ArrayList<PoemDTO> poems = new ArrayList();
 
     public PoemController(EntityManagerFactory emf)
     {
         genericDAO = GenericDAO.getInstance(emf);
     }
 
+    public void populateData()
+    {
+        try
+        {
+            Poem poems = objectMapper.readValue(new File("src/poems.json"), Poem.class);
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
     public void getAll(Context ctx)
     {
         try
         {
+            logger.info("test logging" + ctx.path());
+            // throw new Exception("stor fejl er sket");  // test denne linje
             ctx.json(genericDAO.findAll(Poem.class));
         } catch (Exception e)
         {
@@ -49,7 +73,7 @@ public class PoemController
         {
             PoemDTO newPoem = ctx.bodyAsClass(PoemDTO.class);
             Poem poem = new Poem(newPoem);
-            ctx.json(genericDAO.create(Poem.class));
+            ctx.json(genericDAO.create(newPoem));
         } catch (Exception e)
         {
             ctx.status(404).json("could not persist object to db");
