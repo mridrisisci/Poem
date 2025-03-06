@@ -2,82 +2,27 @@
   "poems": [
     {
       "title": "Digt 1",
-      "content": [
-        "Som månen kaster sit lys over haven,",
-        "finder mit hjerte et skjult spor i mørket.",
-        "Min sjæl søger stillhed i nattens stemme,",
-        "men verden taler stadig, dens ord er smerte.",
-        "I dine øjne ser jeg et liv, der forsvandt,",
-        "som flammer der brænder, men aldrig dør ud i det fjerne.",
-        "Kærligheden er en brændende flod i mit sind,",
-        "jeg drukner i dens dybde, men længes efter dens vande.",
-        "I mit hjertes rum er der kun plads til dig,",
-        "men du har forladt mig, og stillheden er min ven."
-      ],
+      "content": "Som månen kaster sit lys, finder mit hjerte et spor. Kærligheden er en flod i mit sind.",
       "author": "ChatGPT"
     },
     {
       "title": "Digt 2",
-      "content": [
-        "Blomsterne falder som tårer fra himlen,",
-        "og jeg søger dit smil i hver eneste dråbe.",
-        "Kærlighedens tåge omfavner min sjæl,",
-        "men jeg ser dig kun i skyggernes tåger.",
-        "Hvordan kan jeg forstå, hvad hjertet ønsker,",
-        "når du er væk, og alt, der er tilbage, er mørket?",
-        "Hver nat kalder jeg på dit navn i vinden,",
-        "men kun stilhed svarer, og jeg er fanget i den.",
-        "Jeg ser stjernerne brænde, men intet lys er for mig,",
-        "for du er væk, og det eneste, der er tilbage, er mit tab."
-      ],
+      "content": "Blomsterne falder som tårer, jeg søger dit smil i hver dråbe, men kun stilhed svarer.",
       "author": "ChatGPT"
     },
     {
       "title": "Digt 3",
-      "content": [
-        "Vinden bærer din duft, men du er langt borte,",
-        "jeg finder dig i drømmene, men vågner alene.",
-        "Kærligheden fløj væk som en svane i stormen,",
-        "jeg står tilbage med et hjerte, der har brækket sig selv.",
-        "Mine tanker er som søer, stille men dybe,",
-        "og du svømmer i dem, men kun som et spøgelse.",
-        "Hvorfor denne smerte, når intet er som før?",
-        "Jeg holder fast i håbet, men håbet svigter mig.",
-        "Alt, hvad jeg har, er minder om din varme,",
-        "men tiden er som sand, der glider gennem hænderne."
-      ],
+      "content": "Vinden bærer din duft, men du er langt borte. Jeg holder fast i håbet, men håbet svigter.",
       "author": "ChatGPT"
     },
     {
       "title": "Digt 4",
-      "content": [
-        "Morgenen kommer, men solen nægter at skinne,",
-        "jeg ser kun din skygge, som mørket tager med sig.",
-        "Hver dag er en søgen efter det, jeg har mistet,",
-        "et ødelagt spejl, hvor dit ansigt forsvinder.",
-        "I dine ord var der en melodi, jeg kendte,",
-        "men nu er de stumme, og al musik er død.",
-        "Mit hjerte er et tårn af ensomhed og savn,",
-        "men jeg bygger det igen, trods alt, hvad der er brudt.",
-        "Jeg ringer på døren, men du åbner ikke længere,",
-        "og alt, der er tilbage, er en verden af stille tårer."
-      ],
+      "content": "Morgenen kommer, men solen nægter at skinne. Jeg ser kun din skygge, og mit hjerte lider.",
       "author": "ChatGPT"
     },
     {
       "title": "Digt 5",
-      "content": [
-        "Den stille nat hvisker dit navn i mine drømme,",
-        "jeg vågner med en længsel, der aldrig vil falme.",
-        "Dit ansigt er som en malerisk solnedgang,",
-        "smukt men fjernt, forsvundet bag horisontens kant.",
-        "Kærligheden var en ild, men vi lod den dø,",
-        "nu er jeg tilbage, alene med mine følelser, som sne.",
-        "Jeg søger dig i hver stille flamme,",
-        "men du er kun et ekko, som vinden bærer bort.",
-        "Jeg skriver dit navn på hver stjerne, jeg ser,",
-        "men de svarer ikke, og mit hjerte brister, hver gang."
-      ],
+      "content": "Den stille nat hvisker dit navn i mine drømme, og jeg vågner med en længsel, der aldrig falmer.",
       "author": "ChatGPT"
     }
   ]

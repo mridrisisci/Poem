@@ -64,4 +64,10 @@ public class ApplicationConfig
         });
         return instance;
     }
+
+    public static void stopServer()
+    {
+        app.stop();
+        app = null;
+    }
 }

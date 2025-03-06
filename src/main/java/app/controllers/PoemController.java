@@ -2,9 +2,12 @@ package app.controllers;
 
 
 import app.daos.GenericDAO;
+import app.dtos.PoemContainerDTO;
 import app.dtos.PoemDTO;
 import app.entities.Poem;
 import app.rest.Routes;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.javalin.http.Context;
 import jakarta.persistence.EntityManagerFactory;
@@ -15,6 +18,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
 public class PoemController
 {
@@ -35,7 +39,14 @@ public class PoemController
     {
         try
         {
-            Poem poems = objectMapper.readValue(new File("src/poems.json"), Poem.class);
+            JsonNode node = objectMapper.readTree(new File("src/poems.json")).get("poems");
+            Set<PoemDTO> poems = objectMapper.convertValue(node, new TypeReference<Set<PoemDTO>>() {});
+            for (PoemDTO poem : poems)
+            {
+                genericDAO.create(new Poem(poem));
+            }
+            poems.forEach(System.out::println);
+            //PoemContainerDTO[] poems = objectMapper.readValue(new File("src/poems.json"), PoemContainerDTO[].class);
         } catch (Exception e)
         {
             e.printStackTrace();

@@ -5,6 +5,7 @@ import app.rest.ApplicationConfig;
 import app.rest.Routes;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.restassured.RestAssured;
 import org.junit.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -23,21 +24,24 @@ public class PoemResourceTest
     @BeforeAll
     static void setupAll()
     {
-        ApplicationConfig
-            .getInstance()
-            .initiateServer()
-            .setRoute(Routes.getRoutes())
-            .startServer(7777);
+
     }
 
     @BeforeEach
     void setUp()
     {
+        ApplicationConfig
+            .getInstance()
+            .initiateServer()
+            .setRoute(Routes.getRoutes())
+            .startServer(7777);
+        RestAssured.baseURI = "http://localhost:7777/api";
     }
 
     @AfterEach
     void tearDown()
     {
+        ApplicationConfig.stopServer();
     }
 
     @Test
@@ -66,7 +70,31 @@ public class PoemResourceTest
                 .body(json)
                 .post("/poem")
                 .then()
-                .statusCode(200);
+                .statusCode(200)
+                .body("title", equalTo("Digte 1")); // check here??
+        } catch (JsonProcessingException e)
+        {
+            e.printStackTrace();
+            fail();
+        }
+    }
+
+    @Test
+    @DisplayName("Test for updating an existing poem")
+    public void updateTest()
+    {
+        Poem poem = new Poem("New poem2", "hi hi hi hi hi hi", "GPT");
+        try
+        {
+            String json = objectMapper.writeValueAsString(poem);
+            given().when()
+                .contentType("application/json")
+                .accept("application/json")
+                .body(json)
+                .put("/poem/1") // double check id
+                .then()
+                .statusCode(200)
+                .body("author", equalTo("GPT")); // check here??
         } catch (JsonProcessingException e)
         {
             e.printStackTrace();

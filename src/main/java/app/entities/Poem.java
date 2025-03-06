@@ -37,8 +37,8 @@ public class Poem
     public Poem(PoemDTO poemDTO)
     {
         this.title = poemDTO.getTitle();
-        this.author = poemDTO.getAuthor();
         this.content = poemDTO.getContent();
+        this.author = poemDTO.getAuthor();
     }
 
 
