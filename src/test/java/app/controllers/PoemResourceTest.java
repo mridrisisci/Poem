@@ -1,7 +1,7 @@
 package app.controllers;
 
 import app.entities.Poem;
-import app.rest.ApplicationConfig;
+import app.config.ApplicationConfig;
 import app.rest.Routes;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

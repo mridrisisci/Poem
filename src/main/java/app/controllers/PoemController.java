@@ -2,10 +2,9 @@ package app.controllers;
 
 
 import app.daos.GenericDAO;
-import app.dtos.PoemContainerDTO;
+import app.dtos.ErrorMessage;
 import app.dtos.PoemDTO;
 import app.entities.Poem;
-import app.rest.Routes;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -16,9 +15,9 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class PoemController
 {
@@ -33,6 +32,36 @@ public class PoemController
     public PoemController(EntityManagerFactory emf)
     {
         genericDAO = GenericDAO.getInstance(emf);
+    }
+
+
+    public void getPoems1(Context ctx)
+    {
+        try
+        {
+            List<Poem> poems = genericDAO.findAll(Poem.class);
+            // convert entities to DTOs
+            List<PoemDTO> poemDTOS = poems.stream()
+                .map(PoemDTO::new)
+                .collect(Collectors.toList());
+            ctx.status(200).json(poemDTOS);
+            logger.info("Poems have been fetched");
+        } catch (Exception e)
+        {
+            logger.info("Unable to fetch poems");
+            ErrorMessage error = new ErrorMessage("could not retrieve all objects");
+            ctx.status(404).json(error);
+        }
+    }
+    public void getPoems(Context ctx)
+    {
+        try
+        {
+            ctx.json(genericDAO.findAll(Poem.class));
+        } catch (Exception e)
+        {
+            ctx.status(404).json("could not retrieve all objects");
+        }
     }
 
     public void populateData()

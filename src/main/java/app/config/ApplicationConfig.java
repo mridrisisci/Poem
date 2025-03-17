@@ -1,10 +1,14 @@
-package app.rest;
+package app.config;
 
+import app.security.controllers.ISecurityController;
+import app.security.controllers.SecurityController;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import io.javalin.Javalin;
 import io.javalin.apibuilder.EndpointGroup;
 import io.javalin.config.JavalinConfig;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EntityManagerFactory;
 
 import static io.javalin.apibuilder.ApiBuilder.path;
 
@@ -14,6 +18,8 @@ public class ApplicationConfig
     private static Javalin app;
     private static JavalinConfig javalinConfig;
     private ObjectMapper objectMapper = new ObjectMapper();
+    private static final EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory();
+    private static ISecurityController securityController = new SecurityController(emf);
 
     private ApplicationConfig() {}
 
@@ -69,5 +75,12 @@ public class ApplicationConfig
     {
         app.stop();
         app = null;
+    }
+
+    public ApplicationConfig checkSecurityRoles()
+    {
+        app.beforeMatched(securityController.authenticate());
+        app.beforeMatched(securityController.authorize());
+        return instance;
     }
 }

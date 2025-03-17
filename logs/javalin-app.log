@@ -717,3 +717,76 @@ Response: [200 OK], execution took 1591.74 ms
 2025-03-06 13:38:57 [main] INFO  io.javalin.Javalin - Javalin started in 278ms \o/
 2025-03-06 13:38:57 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/api
 2025-03-06 13:38:57 [main] INFO  io.javalin.Javalin - You are running Javalin 6.4.0 (released December 17, 2024).
+2025-03-06 13:45:00 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.6.Final
+2025-03-06 13:45:00 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-06 13:45:00 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-03-06 13:45:01 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/poems]
+	Database driver: org.postgresql.Driver
+	Database version: 16.2
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-03-06 13:45:03 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@601eb4af] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-03-06 13:45:03 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1c297897] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-03-06 13:45:03 [main] INFO  io.javalin.Javalin - JAVALIN HANDLER REGISTRATION DEBUG LOG: GET[/api/routes]
+2025-03-06 13:45:03 [main] INFO  io.javalin.Javalin - JAVALIN HANDLER REGISTRATION DEBUG LOG: GET[/api/poem/]
+2025-03-06 13:45:03 [main] INFO  io.javalin.Javalin - JAVALIN HANDLER REGISTRATION DEBUG LOG: GET[/api/poem/{id}]
+2025-03-06 13:45:03 [main] INFO  io.javalin.Javalin - JAVALIN HANDLER REGISTRATION DEBUG LOG: POST[/api/poem/]
+2025-03-06 13:45:03 [main] INFO  io.javalin.Javalin - JAVALIN HANDLER REGISTRATION DEBUG LOG: PUT[/api/poem/{id}]
+2025-03-06 13:45:03 [main] INFO  io.javalin.Javalin - JAVALIN HANDLER REGISTRATION DEBUG LOG: DELETE[/api/poem/{id}]
+2025-03-06 13:45:03 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+2025-03-06 13:45:03 [main] INFO  org.eclipse.jetty.server.Server - jetty-11.0.24; built: 2024-08-26T18:11:22.448Z; git: 5dfc59a691b748796f922208956bd1f2794bcd16; jvm 22.0.2+9-FR
+2025-03-06 13:45:03 [main] INFO  o.e.j.s.s.DefaultSessionIdManager - Session workerName=node0
+2025-03-06 13:45:03 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@72110818{/api,null,AVAILABLE}
+2025-03-06 13:45:03 [main] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@4586a8aa{HTTP/1.1, (http/1.1)}{0.0.0.0:7000}
+2025-03-06 13:45:04 [main] INFO  org.eclipse.jetty.server.Server - Started Server@4228f269{STARTING}[11.0.24,sto=0] @4545ms
+2025-03-06 13:45:04 [main] INFO  io.javalin.Javalin - 
+       __                  ___           _____
+      / /___ __   ______ _/ (_)___      / ___/
+ __  / / __ `/ | / / __ `/ / / __ \    / __ \
+/ /_/ / /_/ /| |/ / /_/ / / / / / /   / /_/ /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/    \____/
+
+       https://javalin.io/documentation
+
+2025-03-06 13:45:04 [main] INFO  io.javalin.Javalin - Javalin started in 275ms \o/
+2025-03-06 13:45:04 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/api
+2025-03-06 13:45:04 [main] INFO  io.javalin.Javalin - You are running Javalin 6.4.0 (released December 17, 2024).
+2025-03-07 12:04:04 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.6.Final
+2025-03-07 12:04:04 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-07 12:04:04 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-03-07 12:04:04 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/poems]
+	Database driver: org.postgresql.Driver
+	Database version: 16.2
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-03-07 12:04:06 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@697a0948] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-03-07 12:04:06 [main] INFO  io.javalin.Javalin - JAVALIN HANDLER REGISTRATION DEBUG LOG: GET[/api/routes]
+2025-03-07 12:04:06 [main] INFO  io.javalin.Javalin - JAVALIN HANDLER REGISTRATION DEBUG LOG: GET[/api/poem/]
+2025-03-07 12:04:06 [main] INFO  io.javalin.Javalin - JAVALIN HANDLER REGISTRATION DEBUG LOG: GET[/api/poem/{id}]
+2025-03-07 12:04:06 [main] INFO  io.javalin.Javalin - JAVALIN HANDLER REGISTRATION DEBUG LOG: POST[/api/poem/]
+2025-03-07 12:04:06 [main] INFO  io.javalin.Javalin - JAVALIN HANDLER REGISTRATION DEBUG LOG: PUT[/api/poem/{id}]
+2025-03-07 12:04:06 [main] INFO  io.javalin.Javalin - JAVALIN HANDLER REGISTRATION DEBUG LOG: DELETE[/api/poem/{id}]
+2025-03-07 12:04:06 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+2025-03-07 12:04:06 [main] INFO  org.eclipse.jetty.server.Server - jetty-11.0.24; built: 2024-08-26T18:11:22.448Z; git: 5dfc59a691b748796f922208956bd1f2794bcd16; jvm 22.0.2+9-FR
+2025-03-07 12:04:06 [main] ERROR io.javalin.Javalin - Failed to start Javalin
+2025-03-07 12:04:06 [main] INFO  org.eclipse.jetty.server.Server - Stopped Server@5908e6d6{STOPPING}[11.0.24,sto=0]
+2025-03-07 12:55:04 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.6.Final
+2025-03-07 12:55:04 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-07 12:55:04 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-03-07 12:55:05 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/poems]
+	Database driver: org.postgresql.Driver
+	Database version: 16.2
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+2025-03-07 12:55:06 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@626e0c86] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-03-14 21:08:41 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-03-14 21:08:44 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)

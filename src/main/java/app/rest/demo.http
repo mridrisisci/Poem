@@ -1,0 +1,38 @@
+
+GET localhost:7000/api/poem
+
+###
+
+POST localhost:7000/api/poem
+Content-Type: "application/json"
+
+{
+    "title": "Silver poem",
+    "author": "ChatGPT",
+    "content": "Som månen kaster sit lys over haven, finder mit hjerte et skjult spor i mørket."
+}
+
+###
+
+// SECURITY
+
+POST http://localhost:7000/api/auth/register
+Content-Type: "application/json"
+
+{
+"username":"user6",
+"password":"p1234"
+}
+
+###
+POST http://localhost:7000/api/auth/login
+Content-Type: "application/json"
+
+{
+"username":"user6",
+"password":"p1234"
+}
+
+###
+GET http://localhost:7000/api/secured/demo
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJcIklkcmlzIElzY2lcIiIsInN1YiI6InVzZXI2IiwiZXhwIjoxNzQxOTQ0MjE5LCJyb2xlcyI6InVzZXIiLCJ1c2VybmFtZSI6InVzZXI2In0.kMAj56olnoGmXkOHOZG-0HY64HL2yhKNyz86QEBR758

@@ -21,7 +21,16 @@
         <jackson.version>2.18.3</jackson.version>
         <javalin.version>6.4.0</javalin.version>
         <slf4j.version>2.0.16</slf4j.version>
+        <jbcrypt.version>0.4</jbcrypt.version>
+        <token.security.version>1.0.4</token.security.version>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <!--  DB    -->
@@ -40,8 +49,14 @@
         <!--  Javalin    -->
         <dependency>
             <groupId>io.javalin</groupId>
-            <artifactId>javalin-bundle</artifactId>
+            <artifactId>javalin</artifactId>
             <version>${javalin.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!--  Logging    -->
@@ -112,6 +127,18 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Jackson for JSON handling -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version> <!-- or the latest version -->
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>${jackson.version}</version> <!-- or the latest version -->
+        </dependency>
+
         <!-- Json Path -->
 
         <dependency>
@@ -129,33 +156,34 @@
             <scope>test</scope>
         </dependency>
 
-
-
-
-        <!-- Jackson for JSON handling -->
+        <!-- BCRYPT -->
         <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>${jackson.version}</version> <!-- or the latest version -->
+            <groupId>org.mindrot</groupId>
+            <artifactId>jbcrypt</artifactId>
+            <version>${jbcrypt.version}</version>
         </dependency>
+
+
+        <!-- JWT Utility token-->
         <dependency>
-            <groupId>com.fasterxml.jackson.datatype</groupId>
-            <artifactId>jackson-datatype-jsr310</artifactId>
-            <version>${jackson.version}</version> <!-- or the latest version -->
+            <groupId>com.github.Hartmannsolution</groupId>
+            <artifactId>TokenSecurity</artifactId>
+            <version>${token.security.version}</version>
         </dependency>
+
     </dependencies>
 
-    <!-- SUREFIRE plugin -->
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M7</version> <!-- Make sure to use a version that supports JUnit 5 -->
-            </plugin>
-        </plugins>
-    </build>
 
+    <!-- SUREFIRE plugin -->
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.0.0-M7</version> <!-- Make sure to use a version that supports JUnit 5 -->
+                </plugin>
+            </plugins>
+        </build>
 
 
 </project>

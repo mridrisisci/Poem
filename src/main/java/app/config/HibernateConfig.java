@@ -1,6 +1,5 @@
 package app.config;
 
-import app.entities.*;
 import app.utils.Utils;
 import jakarta.persistence.EntityManagerFactory;
 import org.hibernate.SessionFactory;
@@ -10,7 +9,7 @@ import org.hibernate.service.ServiceRegistry;
 
 import java.util.Properties;
 
-public class    HibernateConfig
+public class HibernateConfig
 {
     private static EntityManagerFactory emf;
     private static EntityManagerFactory emfTest;
@@ -40,7 +39,7 @@ public class    HibernateConfig
 
     // TODO: IMPORTANT: Add Entity classes here for them to be registered with Hibernate
     private static void getAnnotationConfiguration(Configuration configuration) {
-        configuration.addAnnotatedClass(Poem.class);
+        //configuration.addAnnotatedClass(Poem.class);
     }
 
     private static EntityManagerFactory createEMF(boolean forTest) {
